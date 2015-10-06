@@ -4,7 +4,7 @@
 #
 Name     : enum34
 Version  : 1.0.4
-Release  : 12
+Release  : 13
 URL      : https://pypi.python.org/packages/source/e/enum34/enum34-1.0.4.tar.gz
 Source0  : https://pypi.python.org/packages/source/e/enum34/enum34-1.0.4.tar.gz
 Summary  : Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4
