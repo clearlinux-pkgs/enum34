@@ -4,7 +4,7 @@
 #
 Name     : enum34
 Version  : 1.1.6
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Source0  : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Summary  : Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4
@@ -37,8 +37,8 @@ python components for the enum34 package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1487796603
 python2 setup.py build -b py2
-python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -48,7 +48,6 @@ py.test-2.7 || :
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
