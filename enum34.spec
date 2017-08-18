@@ -4,7 +4,7 @@
 #
 Name     : enum34
 Version  : 1.1.6
-Release  : 28
+Release  : 29
 URL      : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Source0  : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Summary  : Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4
@@ -20,9 +20,13 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-enum34 is the new Python stdlib enum module available in Python 3.4
-backported for previous versions of Python from 2.4 to 3.3.
-tested on 2.6, 2.7, and 3.3+
+========================================
+        
+        An enumeration is a set of symbolic names (members) bound to unique, constant
+        values.  Within an enumeration, the members can be compared by identity, and
+        the enumeration itself can be iterated over.
+        
+            from enum import Enum
 
 %package python
 Summary: python components for the enum34 package.
@@ -36,8 +40,11 @@ python components for the enum34 package.
 %setup -q -n enum34-1.1.6
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1487796603
+export SOURCE_DATE_EPOCH=1503088314
 python2 setup.py build -b py2
 
 %check
@@ -54,4 +61,4 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
