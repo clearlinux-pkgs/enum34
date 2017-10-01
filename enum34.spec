@@ -4,13 +4,14 @@
 #
 Name     : enum34
 Version  : 1.1.6
-Release  : 31
+Release  : 32
 URL      : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Source0  : http://pypi.debian.net/enum34/enum34-1.1.6.tar.gz
 Summary  : Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: enum34-legacypython
+Requires: enum34-python
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : py
@@ -31,9 +32,19 @@ BuildRequires : setuptools
 %package legacypython
 Summary: legacypython components for the enum34 package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the enum34 package.
+
+
+%package python
+Summary: python components for the enum34 package.
+Group: Default
+Requires: enum34-legacypython
+
+%description python
+python components for the enum34 package.
 
 
 %prep
@@ -44,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505363705
+export SOURCE_DATE_EPOCH=1506877072
 python2 setup.py build -b py2
 
 %check
@@ -62,3 +73,6 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
