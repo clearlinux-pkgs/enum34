@@ -1,9 +1,17 @@
 # This file contains recursive sources that require this package
+astroid
+ceph
 cryptography
 ecdsa
+gensim
+jupyter-notebook-gist
 keyring
+llvmlite
 ndg_httpsclient
+numba
 paramiko
 pyOpenSSL
+requests
 secretstorage
+smart_open
 urllib3
